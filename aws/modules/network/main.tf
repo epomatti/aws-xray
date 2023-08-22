@@ -26,15 +26,15 @@ resource "aws_internet_gateway" "main" {
 }
 
 ### Subnets ###
-module "private" {
-  source   = "./private"
-  vpc_id   = aws_vpc.main.id
-  workload = var.workload
+# module "private" {
+#   source   = "./private"
+#   vpc_id   = aws_vpc.main.id
+#   workload = var.workload
 
-  az1 = local.az1
-  az2 = local.az2
-  az3 = local.az3
-}
+#   az1 = local.az1
+#   az2 = local.az2
+#   az3 = local.az3
+# }
 
 module "public" {
   source              = "./public"
