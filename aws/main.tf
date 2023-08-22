@@ -25,3 +25,10 @@ resource "aws_ecr_repository" "main" {
   image_tag_mutability = "MUTABLE"
   force_delete         = true
 }
+
+module "lb" {
+  source   = "./modules/lb"
+  workload = local.workload
+  vpc_id   = module.network.vpc_id
+  subnets  = module.network.public_subnets
+}
