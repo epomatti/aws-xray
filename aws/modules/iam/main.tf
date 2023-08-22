@@ -104,7 +104,12 @@ resource "aws_iam_policy" "dynamodb" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "dynamodb_access" {
+resource "aws_iam_role_policy_attachment" "dynamodb" {
   role       = aws_iam_role.ecs_task.name
   policy_arn = aws_iam_policy.dynamodb.arn
+}
+
+resource "aws_iam_role_policy_attachment" "xray" {
+  role       = aws_iam_role.ecs_task.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSXrayFullAccess"
 }

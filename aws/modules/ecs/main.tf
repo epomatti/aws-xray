@@ -23,6 +23,18 @@ resource "aws_ecs_task_definition" "main" {
 
   container_definitions = jsonencode([
     {
+      "name" : "xray-daemon",
+      "image" : "public.ecr.aws/xray/aws-xray-daemon:latest",
+      "cpu" : 32,
+      "memoryReservation" : 256,
+      "portMappings" : [
+        {
+          "containerPort" : 2000,
+          "protocol" : "udp"
+        }
+      ]
+    },
+    {
       "name" : "${var.workload}",
       "image" : "${var.repository_url}:latest",
       "environment" : [
