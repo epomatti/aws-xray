@@ -73,3 +73,38 @@ resource "aws_iam_role" "ecs_task" {
     ]
   })
 }
+
+resource "aws_iam_policy" "dynamodb" {
+  name = "ECSFargateTaskPolicy-${var.workload}"
+
+  # Following AWS documentation
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "dynamodb:BatchGet*",
+          "dynamodb:DescribeStream",
+          "dynamodb:DescribeTable",
+          "dynamodb:Get*",
+          "dynamodb:ListTables",
+          "dynamodb:Query",
+          "dynamodb:Scan",
+          "dynamodb:BatchWrite*",
+          "dynamodb:Delete*",
+          "dynamodb:Update*",
+          "dynamodb:PutItem"
+        ]
+        Resource = [
+          "arn:aws:dynamodb:${var.aws_region}:${var.aws_account_id}:table/*"
+        ]
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "dynamodb_access" {
+  role       = aws_iam_role.ecs_task.name
+  policy_arn = aws_iam_policy.dynamodb.arn
+}

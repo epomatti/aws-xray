@@ -13,6 +13,7 @@ func init() {
 	// conditionally load plugin
 	if os.Getenv("ENVIRONMENT") == "production" {
 		ecs.Init()
+		log.Println("X-Ray initiated")
 	}
 
 	xray.Configure(xray.Config{
@@ -34,7 +35,7 @@ func main() {
 func getPort() string {
 	port := os.Getenv("PORT")
 	if len(port) == 0 {
-		port = "8888"
+		port = "8080"
 	}
 	return port
 }

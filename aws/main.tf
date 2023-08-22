@@ -55,3 +55,11 @@ module "ecs" {
   repository_url              = aws_ecr_repository.main.repository_url
 }
 
+module "dyn" {
+  source = "./modules/dyn"
+}
+
+module "xray" {
+  source   = "./modules/xray"
+  workload = local.workload
+}
