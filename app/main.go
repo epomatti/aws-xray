@@ -16,7 +16,7 @@ func init() {
 	}
 
 	xray.Configure(xray.Config{
-		// ServiceVersion: "1.2.3",
+		ServiceVersion: "1.2.3",
 	})
 }
 
