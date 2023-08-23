@@ -32,6 +32,12 @@ resource "aws_ecs_task_definition" "main" {
       ],
       "cpu" : 32,
       "memoryReservation" : 256,
+      # "healthCheck" : {
+      #   "command" : [
+      #     "CMD-SHELL",
+      #     "netstat -aun | grep 2000 > /dev/null; if [ 0 != $? ]; then exit 1; fi;",
+      #   ],
+      # },
       "portMappings" : [
         {
           "containerPort" : 2000,
