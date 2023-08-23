@@ -5,6 +5,23 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@aws-sdk/service-error-classification@npm:^3.4.1":
+  version: 3.370.0
+  resolution: "@aws-sdk/service-error-classification@npm:3.370.0"
+  checksum: f03549afbe0c6c2b09c6834367fed8e975f54f4fba35a5c0d0f9416eb6cbc58b9400365fbed9006f3a0133bd2b6ea7ef212c0a917526df6d2ac49f11937b7f28
+  languageName: node
+  linkType: hard
+
+"@aws-sdk/types@npm:^3.4.1":
+  version: 3.391.0
+  resolution: "@aws-sdk/types@npm:3.391.0"
+  dependencies:
+    "@smithy/types": ^2.2.0
+    tslib: ^2.5.0
+  checksum: 3539807ba0d515e0788da7e234c83578b761cf02b4bc2ede04755a39e44cc22dfc2edd0a48d333a090dc87c0f540cef957cd3c8009a12f38017438b50563fcbb
+  languageName: node
+  linkType: hard
+
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -68,6 +85,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@smithy/types@npm:^2.2.0":
+  version: 2.2.2
+  resolution: "@smithy/types@npm:2.2.2"
+  dependencies:
+    tslib: ^2.5.0
+  checksum: 2799a14620da60efb2a0aba1bf9adc553a5446dc447b9ee1d7a95410233a70dff2b5e563fecf84388137dabbe662c6bf3a2247ca20a1f266c1256f82e0f25fcf
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -113,6 +139,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cls-hooked@npm:^4.3.3":
+  version: 4.3.5
+  resolution: "@types/cls-hooked@npm:4.3.5"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6e66f9bbacddd21560a76a21fe00fba97e75bacbc4502da3dc2ede8259907cde65f8fecf5e5684cc807dc222d841030049b58faf069a35b210d11fb95858ba3e
+  languageName: node
+  linkType: hard
+
 "@types/connect@npm:*":
   version: 3.4.35
   resolution: "@types/connect@npm:3.4.35"
@@ -134,7 +169,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:^4.17.17":
+"@types/express@npm:*, @types/express@npm:^4.17.17":
   version: 4.17.17
   resolution: "@types/express@npm:4.17.17"
   dependencies:
@@ -167,10 +202,30 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mysql@npm:*":
+  version: 2.15.21
+  resolution: "@types/mysql@npm:2.15.21"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6f526e0183c2d03628ca3bdeec839900403863641d61397de3aa0431b8e92457f1580de16b54ee3cd81ccb3968f949a5fa9be939a2101f2148ed5ff3c775c0a7
+  languageName: node
+  linkType: hard
+
 "@types/node@npm:*, @types/node@npm:^20.5.3":
   version: 20.5.3
   resolution: "@types/node@npm:20.5.3"
   checksum: fe67a0fd7402218bdf91523a2b1c2e41d619f7294b1a471e0a778b8bc7bb3fcf291aed12041bcbe9622d50a3d1295a9adea0e7e19bb9386a246bf66071404721
+  languageName: node
+  linkType: hard
+
+"@types/pg@npm:*":
+  version: 8.10.2
+  resolution: "@types/pg@npm:8.10.2"
+  dependencies:
+    "@types/node": "*"
+    pg-protocol: "*"
+    pg-types: ^4.0.1
+  checksum: 49da89f64cec1bd12a3fbc0c72b17d685c2fee579726a529f62fcab395dbc5696d80455073409947a577164b3c53a90181a331e4a5d9357679f724d4ce37f4b9
   languageName: node
   linkType: hard
 
@@ -316,6 +371,7 @@ __metadata:
   dependencies:
     "@types/express": ^4.17.17
     "@types/node": ^20.5.3
+    aws-xray-sdk: ^3.5.1
     express: ^4.18.2
     nodemon: ^3.0.1
     ts-node: ^10.9.1
@@ -351,6 +407,81 @@ __metadata:
   version: 1.1.1
   resolution: "array-flatten@npm:1.1.1"
   checksum: a9925bf3512d9dce202112965de90c222cd59a4fbfce68a0951d25d965cf44642931f40aac72309c41f12df19afa010ecadceb07cfff9ccc1621e99d89ab5f3b
+  languageName: node
+  linkType: hard
+
+"async-hook-jl@npm:^1.7.6":
+  version: 1.7.6
+  resolution: "async-hook-jl@npm:1.7.6"
+  dependencies:
+    stack-chain: ^1.3.7
+  checksum: f84421c83ad5bc4e54a3a6ad7be4fb911840a17c01e5ee3f8e4e9cd077a42c7bc206dbc6b36d52eaca5fa37f16a15f83d63135976cf3e17d5bdc2824f6002705
+  languageName: node
+  linkType: hard
+
+"atomic-batcher@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "atomic-batcher@npm:1.0.2"
+  checksum: 0f06a3b41622918bef3f2ed403eaeab4459ae04176ad6b05e43681594a5baa5feb596d4495857babab1c1ac759f16c5757e2d8bcf1e54d9a7a706b852a26b128
+  languageName: node
+  linkType: hard
+
+"aws-xray-sdk-core@npm:3.5.1":
+  version: 3.5.1
+  resolution: "aws-xray-sdk-core@npm:3.5.1"
+  dependencies:
+    "@aws-sdk/service-error-classification": ^3.4.1
+    "@aws-sdk/types": ^3.4.1
+    "@types/cls-hooked": ^4.3.3
+    atomic-batcher: ^1.0.2
+    cls-hooked: ^4.2.2
+    semver: ^7.5.3
+  checksum: 2028621c2692eedbfeaee287f38847000c66584982923fdbad48724400766ab1f8b55b6d776d40e0083fe0ffc151650fd9f9426079b7c1241161f3fdc9e9574c
+  languageName: node
+  linkType: hard
+
+"aws-xray-sdk-express@npm:3.5.1":
+  version: 3.5.1
+  resolution: "aws-xray-sdk-express@npm:3.5.1"
+  dependencies:
+    "@types/express": "*"
+  peerDependencies:
+    aws-xray-sdk-core: ^3.5.1
+  checksum: 81336b059a1d16014f92ed034be2fce7656aa7664888ae367d09a459ffffe9c4e1c8787afe54d63e1ce9e8cc8635a4c31286312ce3a43c0bcefaa956a2811bdd
+  languageName: node
+  linkType: hard
+
+"aws-xray-sdk-mysql@npm:3.5.1":
+  version: 3.5.1
+  resolution: "aws-xray-sdk-mysql@npm:3.5.1"
+  dependencies:
+    "@types/mysql": "*"
+  peerDependencies:
+    aws-xray-sdk-core: ^3.5.1
+  checksum: 74c5e19f29497917444902d8385669ad847a67018b1b1326f1be91bbf753a241769efa43fd3404c770d14f7b51b41be68660f01db2287acee22710c6d449bdbd
+  languageName: node
+  linkType: hard
+
+"aws-xray-sdk-postgres@npm:3.5.1":
+  version: 3.5.1
+  resolution: "aws-xray-sdk-postgres@npm:3.5.1"
+  dependencies:
+    "@types/pg": "*"
+  peerDependencies:
+    aws-xray-sdk-core: ^3.5.1
+  checksum: 1bb992d5b53b309ce4e0cbf295be0d20ce1fb85795525eddb39cb48c3845da2a98db61cde95bf5a6c601f8c79c9bd674e7fbf8afc74ce501df4f543028f86c5f
+  languageName: node
+  linkType: hard
+
+"aws-xray-sdk@npm:^3.5.1":
+  version: 3.5.1
+  resolution: "aws-xray-sdk@npm:3.5.1"
+  dependencies:
+    aws-xray-sdk-core: 3.5.1
+    aws-xray-sdk-express: 3.5.1
+    aws-xray-sdk-mysql: 3.5.1
+    aws-xray-sdk-postgres: 3.5.1
+  checksum: b0ee005f0b1b172f33db3169e32967eb7a95ef82a0d1e189d124dd2f2a42ab6cbf1356670fd1c6e6db2f6e96763b4484f4070d0255a3f4f17ec03ea6fe123256
   languageName: node
   linkType: hard
 
@@ -483,6 +614,17 @@ __metadata:
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
   checksum: 2ac8cd2b2f5ec986a3c743935ec85b07bc174d5421a5efc8017e1f146a1cf5f781ae962618f416352103b32c9cd7e203276e8c28241bbe946160cab16149fb68
+  languageName: node
+  linkType: hard
+
+"cls-hooked@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "cls-hooked@npm:4.2.2"
+  dependencies:
+    async-hook-jl: ^1.7.6
+    emitter-listener: ^1.0.1
+    semver: ^5.4.1
+  checksum: 3a8a4e30b03a81ec275eb9c079c49d4497013e7fa36259e86c9b6aff7990e85eebbc97552ed8a035c19403f0b825000df9bada5c1c0ac7cf1b2506c3a903df60
   languageName: node
   linkType: hard
 
@@ -642,6 +784,15 @@ __metadata:
   version: 1.1.1
   resolution: "ee-first@npm:1.1.1"
   checksum: 1b4cac778d64ce3b582a7e26b218afe07e207a0f9bfe13cc7395a6d307849cfe361e65033c3251e00c27dd060cab43014c2d6b2647676135e18b77d2d05b3f4f
+  languageName: node
+  linkType: hard
+
+"emitter-listener@npm:^1.0.1":
+  version: 1.1.2
+  resolution: "emitter-listener@npm:1.1.2"
+  dependencies:
+    shimmer: ^1.2.0
+  checksum: 05166bad42a27e51a765ebac3b7d26ac111564fc2d36443cd819f95ef88ea1b9ba6f2895becbcea36f8009890a2a8cb7c36eb9e776d4978e370bd33cb0a181e8
   languageName: node
   linkType: hard
 
@@ -1471,6 +1622,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"obuf@npm:~1.1.2":
+  version: 1.1.2
+  resolution: "obuf@npm:1.1.2"
+  checksum: 41a2ba310e7b6f6c3b905af82c275bf8854896e2e4c5752966d64cbcd2f599cfffd5932006bcf3b8b419dfdacebb3a3912d5d94e10f1d0acab59876c8757f27f
+  languageName: node
+  linkType: hard
+
 "on-finished@npm:2.4.1":
   version: 2.4.1
   resolution: "on-finished@npm:2.4.1"
@@ -1536,10 +1694,83 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pg-int8@npm:1.0.1":
+  version: 1.0.1
+  resolution: "pg-int8@npm:1.0.1"
+  checksum: a1e3a05a69005ddb73e5f324b6b4e689868a447c5fa280b44cd4d04e6916a344ac289e0b8d2695d66e8e89a7fba023affb9e0e94778770ada5df43f003d664c9
+  languageName: node
+  linkType: hard
+
+"pg-numeric@npm:1.0.2":
+  version: 1.0.2
+  resolution: "pg-numeric@npm:1.0.2"
+  checksum: 8899f8200caa1744439a8778a9eb3ceefb599d893e40a09eef84ee0d4c151319fd416634a6c0fc7b7db4ac268710042da5be700b80ef0de716fe089b8652c84f
+  languageName: node
+  linkType: hard
+
+"pg-protocol@npm:*":
+  version: 1.6.0
+  resolution: "pg-protocol@npm:1.6.0"
+  checksum: e12662d2de2011e0c3a03f6a09f435beb1025acdc860f181f18a600a5495dc38a69d753bbde1ace279c8c442536af9c1a7c11e1d0fe3fad3aa1348b28d9d2683
+  languageName: node
+  linkType: hard
+
+"pg-types@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "pg-types@npm:4.0.1"
+  dependencies:
+    pg-int8: 1.0.1
+    pg-numeric: 1.0.2
+    postgres-array: ~3.0.1
+    postgres-bytea: ~3.0.0
+    postgres-date: ~2.0.1
+    postgres-interval: ^3.0.0
+    postgres-range: ^1.1.1
+  checksum: 05258ef2f27a75f1bf4e243f36bb749f85148339d3be818147bcc4aebe019ad7589a6869150713140250d81e5a46ec25dc6e0a031ea77e23db5ca232a0d7a3dc
+  languageName: node
+  linkType: hard
+
 "picomatch@npm:^2.0.4, picomatch@npm:^2.2.1":
   version: 2.3.1
   resolution: "picomatch@npm:2.3.1"
   checksum: 050c865ce81119c4822c45d3c84f1ced46f93a0126febae20737bd05ca20589c564d6e9226977df859ed5e03dc73f02584a2b0faad36e896936238238b0446cf
+  languageName: node
+  linkType: hard
+
+"postgres-array@npm:~3.0.1":
+  version: 3.0.2
+  resolution: "postgres-array@npm:3.0.2"
+  checksum: 5955f9dffeb6fa960c1a0b04fd4b2ba16813ddb636934ad26f902e4d76a91c0b743dcc6edc4cffc52deba7d547505e0020adea027c1d50a774f989cf955420d1
+  languageName: node
+  linkType: hard
+
+"postgres-bytea@npm:~3.0.0":
+  version: 3.0.0
+  resolution: "postgres-bytea@npm:3.0.0"
+  dependencies:
+    obuf: ~1.1.2
+  checksum: 5f917a003fcaa0df7f285e1c37108ad474ce91193466b9bd4bcaecef2cdea98ca069c00aa6a8dbe6d2e7192336cadc3c9b36ae48d1555a299521918e00e2936b
+  languageName: node
+  linkType: hard
+
+"postgres-date@npm:~2.0.1":
+  version: 2.0.1
+  resolution: "postgres-date@npm:2.0.1"
+  checksum: 0304bf8641a01412e4f5c3a374604e2e3dbc9dbee71d30df12fe60b32560c5674f887c2d15bafa2996f3b618b617398e7605f0e3669db43f31e614dfe69f8de7
+  languageName: node
+  linkType: hard
+
+"postgres-interval@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "postgres-interval@npm:3.0.0"
+  checksum: c7a1cf006de97de663b6b8c4d2b167aa9909a238c4866a94b15d303762f5ac884ff4796cd6e2111b7f0a91302b83c570453aa8506fd005b5a5d5dfa87441bebc
+  languageName: node
+  linkType: hard
+
+"postgres-range@npm:^1.1.1":
+  version: 1.1.3
+  resolution: "postgres-range@npm:1.1.3"
+  checksum: bf7e194a18c490d02bda0bd02035a8da454d8fd2b22c55d3d03f185c038b2a6f52d0804417d8090864afefc2b7ed664b2d12c2454a4a0f545dcbbb86488fbdf1
   languageName: node
   linkType: hard
 
@@ -1650,6 +1881,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"semver@npm:^5.4.1":
+  version: 5.7.2
+  resolution: "semver@npm:5.7.2"
+  bin:
+    semver: bin/semver
+  checksum: fb4ab5e0dd1c22ce0c937ea390b4a822147a9c53dbd2a9a0132f12fe382902beef4fbf12cf51bb955248d8d15874ce8cd89532569756384f994309825f10b686
+  languageName: node
+  linkType: hard
+
 "semver@npm:^7.3.5, semver@npm:^7.5.3":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
@@ -1724,6 +1964,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"shimmer@npm:^1.2.0":
+  version: 1.2.1
+  resolution: "shimmer@npm:1.2.1"
+  checksum: aa0d6252ad1c682a4fdfda69e541be987f7a265ac7b00b1208e5e48cc68dc55f293955346ea4c71a169b7324b82c70f8400b3d3d2d60b2a7519f0a3522423250
+  languageName: node
+  linkType: hard
+
 "side-channel@npm:^1.0.4":
   version: 1.0.4
   resolution: "side-channel@npm:1.0.4"
@@ -1792,6 +2039,13 @@ __metadata:
   dependencies:
     minipass: ^7.0.3
   checksum: 0a31b65f21872dea1ed3f7c200d7bc1c1b91c15e419deca14f282508ba917cbb342c08a6814c7f68ca4ca4116dd1a85da2bbf39227480e50125a1ceffeecb750
+  languageName: node
+  linkType: hard
+
+"stack-chain@npm:^1.3.7":
+  version: 1.3.7
+  resolution: "stack-chain@npm:1.3.7"
+  checksum: c2428e794a60e1f8e3b66898657d10b81ea18eefd0842d65f18bad6f53fbca597075079bbda8df5b409aebb82d2055bf9c4a8d439df18c554756ead197fc2260
   languageName: node
   linkType: hard
 
@@ -1936,6 +2190,13 @@ __metadata:
     ts-node-transpile-only: dist/bin-transpile.js
     ts-script: dist/bin-script-deprecated.js
   checksum: 090adff1302ab20bd3486e6b4799e90f97726ed39e02b39e566f8ab674fd5bd5f727f43615debbfc580d33c6d9d1c6b1b3ce7d8e3cca3e20530a145ffa232c35
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.5.0":
+  version: 2.6.2
+  resolution: "tslib@npm:2.6.2"
+  checksum: 329ea56123005922f39642318e3d1f0f8265d1e7fcb92c633e0809521da75eeaca28d2cf96d7248229deb40e5c19adf408259f4b9640afd20d13aecc1430f3ad
   languageName: node
   linkType: hard
 
