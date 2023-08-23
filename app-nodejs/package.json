@@ -1,0 +1,11 @@
+{
+  "name": "app-nodejs",
+  "packageManager": "yarn@3.6.2",
+  "scripts": {
+    "build": "tsc",
+    "dev": "node dist/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
+  }
+}
