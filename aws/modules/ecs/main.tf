@@ -49,6 +49,7 @@ resource "aws_ecs_task_definition" "main" {
       "name" : "${var.workload}",
       "image" : "${var.repository_url}:latest",
       "environment" : [
+        { "name" : "XRAY_ENABLED", "value" : "true" },
         { "name" : "PORT", "value" : "80" },
         { "name" : "AWS_REGION", "value" : "${var.aws_region}" },
       ],

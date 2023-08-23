@@ -11,13 +11,10 @@ import (
 
 func init() {
 	// conditionally load plugin
-	// if os.Getenv("ENVIRONMENT") == "production" {
-	// 	ecs.Init()
-	// 	log.Println("X-Ray initiated")
-	// }
-
-	ecs.Init()
-	log.Println("X-Ray initiated")
+	if os.Getenv("XRAY_ENABLED") == "true" {
+		ecs.Init()
+		log.Println("X-Ray initiated")
+	}
 
 	xray.Configure(xray.Config{
 		ServiceVersion: "1.2.3",
@@ -27,7 +24,7 @@ func init() {
 func main() {
 	port := getPort()
 
-	http.Handle("/", xray.Handler(xray.NewFixedSegmentNamer("MyApp"), http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	http.Handle("/api/hello", xray.Handler(xray.NewFixedSegmentNamer("MyApp"), http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello!"))
 	})))
 

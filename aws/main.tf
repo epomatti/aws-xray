@@ -61,5 +61,4 @@ module "dyn" {
 
 module "xray" {
   source   = "./modules/xray"
-  workload = local.workload
 }

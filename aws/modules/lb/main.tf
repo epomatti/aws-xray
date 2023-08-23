@@ -28,7 +28,7 @@ resource "aws_lb_target_group" "fargate" {
 
   health_check {
     enabled             = true
-    path                = "/"
+    path                = "/health"
     healthy_threshold   = 2
     unhealthy_threshold = 2
     timeout             = 5
