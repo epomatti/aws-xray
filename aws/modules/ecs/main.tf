@@ -11,6 +11,8 @@ resource "aws_ecs_cluster_capacity_providers" "fargate" {
   capacity_providers = ["FARGATE"]
 }
 
+# https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-ecs.html
+
 resource "aws_ecs_task_definition" "main" {
   family             = "${var.workload}-task"
   network_mode       = "awsvpc"
@@ -25,6 +27,9 @@ resource "aws_ecs_task_definition" "main" {
     {
       "name" : "xray-daemon",
       "image" : "public.ecr.aws/xray/aws-xray-daemon:latest",
+      "environment" : [
+        { "name" : "AWS_REGION", "value" : "${var.aws_region}" },
+      ],
       "cpu" : 32,
       "memoryReservation" : 256,
       "portMappings" : [
@@ -39,16 +44,13 @@ resource "aws_ecs_task_definition" "main" {
       "image" : "${var.repository_url}:latest",
       "environment" : [
         { "name" : "PORT", "value" : "80" },
+        { "name" : "AWS_REGION", "value" : "${var.aws_region}" },
       ],
       "healthCheck" : {
-        "retries" : 3,
         "command" : [
           "CMD-SHELL",
-          "curl -f http://localhost:80/ || exit 1",
+          "curl -f http://localhost:80/health || exit 1",
         ],
-        "timeout" : 5,
-        "interval" : 10,
-        "startPeriod" : 3,
       },
       "essential" : true,
       "portMappings" : [
