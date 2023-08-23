@@ -5,10 +5,9 @@ FROM node:18 as builder
 
 WORKDIR /usr/src/app
 COPY .yarn ./.yarn
-COPY package.json yarn.lock .yarnrc.yml ./
+COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
 
-# RUN yarn set version 3.x
-RUN yarn install --frozen-lockfile
+RUN yarn install
 COPY . .
 
 RUN yarn build
@@ -19,10 +18,9 @@ FROM node:18-slim
 ENV NODE_ENV production
 
 WORKDIR /usr/src/app
-
 COPY .yarn ./.yarn
-COPY package.json yarn.lock .yarnrc.yml ./
-RUN yarn install --frozen-lockfile
-COPY --from=builder /usr/src/app/dist ./dist
+COPY package.json yarn.lock .yarnrc.yml tsconfig.json ./
+RUN yarn install
+COPY --from=builder /usr/src/app/dist .
 
-CMD [ "node", "dist/index.js" ]
+CMD [ "node", "index.js" ]
