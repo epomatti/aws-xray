@@ -2,6 +2,8 @@
 
 ECS Fargate cluster with X-Ray Golang application instrumentation.
 
+<img src=".assets/xray.png" />
+
 Create the infrastructure:
 
 ```
