@@ -12,6 +12,14 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+app.get('/api/hello', (req, res) => {
+  res.send('Hello!')
+})
+
+app.get('/health', (req, res) => {
+  res.send('OK')
+})
+
 app.use(AWSXRay.express.closeSegment());
 
 app.listen(port, () => {
