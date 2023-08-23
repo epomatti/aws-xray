@@ -10,8 +10,4 @@ resource "aws_xray_sampling_rule" "myapp_001" {
   service_type   = "*"
   service_name   = "MyApp"
   resource_arn   = "*"
-
-  # attributes = {
-  #   Hello = "Tris"
-  # }
 }
